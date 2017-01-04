@@ -6,6 +6,7 @@ class TodoTask(models.Model):
 	name = fields.Char('Description',required=True) #name of record
 	is_done = fields.Boolean('Done?')
 	active = fields.Boolean('Active?',default=True) #showing only active records
+	#python decorators to add buttons
 	@api.one
 	def do_toggle_done(self):
 		self.is_done = not self.is_done
